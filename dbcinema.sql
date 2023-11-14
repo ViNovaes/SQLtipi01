@@ -50,3 +50,21 @@ select * from tbFuncionarios;
 delete from tbFuncionarios where codigo = 5;
 
 select * from tbFuncionarios;
+
+-- Utilizando os varios tipos de select 
+
+-- Selecionando por nome
+select codigo, nome from tbFuncionarios;
+
+select codigo, nome, telCel from tbFuncionarios;
+
+-- Selecionando por nome e mudand o nome apresentado ao usuario 
+select codigo as 'Codigo', nome as 'Nome dos funcionarios', telcel as 'Telefone', 'Presente' as 'Entrada' from tbfuncionarios;
+
+select nome as 'Nome dos funcionarios', '10%' as 'Desconto' from tbfuncionarios;
+
+-- Criando uma coluna para apresentar ao usuario. Não muda o banco de dados
+select 'Sim' as 'Aluno', nome as 'Nome dos funcionarios', '10%' as 'Desconto' from tbfuncionarios;
+
+-- Pra não repetir item - ou - Evitar item repetido da primeira coluna escrita
+select distinct nome, email from tbfuncionarios;

@@ -10,20 +10,49 @@ show databases;
 
 use dbfarmacia;
 
-create table tbfuncionarios(id_func int, nomeFunc varchar(50), funcao varchar(50));
+create table tbcategorias(
+cod_cat int,
+categoria varchar(50)
+);
 
-create table tbprodutos(id_prod int, nome_prod varchar(50), desc_prod varchar(50));
+create table tbprodutos(
+cod_prod int, 
+produtos varchar(50), 
+preco decimal(5,2),
+qtdade int,
+foto longblob,
+categoria_idcategoria int
+);
 
-insert into tbfuncionarios values(1,'Alvarez','Ceo'),(2,'Felipe','Gerente'),(3,'Pedro','Sub-Gerente');
+create table tbpedidoitens(
+cod_pedidosItens int, 
+qtdade int, 
+preco decimal(5,2),
+total decimal(5,2),
+pedidos_id int,
+pedutos_id int
+);
 
-insert into tbprodutos values(1,'Ibuprofeno','Para dor'),(2,'Aerolin','Asma'),(3,'Prozac','anti-depressivo');
+create table tbpedidos(
+cod_pedidos int, 
+data date, 
+status varchar(50),
+qtdade int,
+sessao varchar(50),
+cliente_id int
+);
+
+create table tbclient(
+cod_cliente int, 
+nome varchar(100),
+email varchar(100),
+senha varchar(100)
+);
 
 show tables;
 
-desc tbfuncionarios;
-
-select * from tbfuncionarios;
-
+desc tbcategorias;
 desc tbprodutos;
-
-select * from tbprodutos;
+desc tbpedidoitens;
+desc tbpedidos;
+desc tbclient;
